@@ -1,3 +1,5 @@
+
+
 package bragagustavo.com.github.api.domain.entity;
 
 import java.io.Serializable;
@@ -29,7 +31,7 @@ public class Client implements Serializable {
     @Column(name = "nome")
     @NotEmpty(message = "Campo é obrigatório")
     @Length(min = 5, max = 120, message = "O tamanho deve ser entre 5 e 120 letras")
-    private String nome;
+    private String name;
 
     @Column(name = "email")
     @NotEmpty(message = "Campo email é obrigatório")
@@ -40,7 +42,7 @@ public class Client implements Serializable {
     @Column(name = "telefone")
     @NotEmpty(message = "Campo telefone é obrigatório")
     @Length(min = 8, max = 15, message = "Campo telefone deve possuir entre 8 e 15 caracteres")
-    private String telefone;
+    private String phone;
 
 
     @Column(unique = true, name = "cpf")
@@ -52,7 +54,4 @@ public class Client implements Serializable {
     @Length(min = 5, max = 120, message = "O endereço deve possuir entre 5 e 120 caracteres")
     private String endereço;
 
-
-
-    
 }
