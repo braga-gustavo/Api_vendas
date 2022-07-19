@@ -49,9 +49,4 @@ public class Client implements Serializable {
     @CPF
     @NotEmpty(message = "Campo CPF nao pode ser vazio")
     private String cpf;
-    
-    @Column(name = "endereco")
-    @Length(min = 5, max = 120, message = "O endereço deve possuir entre 5 e 120 caracteres")
-    private String endereço;
-
 }

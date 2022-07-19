@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Length;
 
+import javax.persistence.Column;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 
@@ -28,4 +29,5 @@ public class ClientDto {
     @NotEmpty(message = "Campo telefone é obrigatório")
     @Length(min = 8, max = 15, message = "Campo telefone deve possuir entre 8 e 15 caracteres")
     private String phone;
+
 }

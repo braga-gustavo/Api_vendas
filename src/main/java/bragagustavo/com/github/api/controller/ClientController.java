@@ -7,7 +7,6 @@ import javax.validation.Valid;
 
 import bragagustavo.com.github.api.controller.api.ClientAPI;
 import bragagustavo.com.github.api.domain.dto.ClientDto;
-import org.apache.catalina.connector.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,7 +26,7 @@ public class ClientController implements ClientAPI {
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<Void> insertClient(@RequestBody @Valid Client client) {
-        clientService.insertclient(client);
+        clientService.insertClient(client);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
                 .buildAndExpand(client.getId()).toUri();
         return ResponseEntity.created(uri).build();
@@ -40,7 +39,6 @@ public class ClientController implements ClientAPI {
       Client client = clientService.fromDto(clientDto);
       client.setId(id);
       clientService.updateClient(client);
-
       return ResponseEntity.noContent().build();
 
     }

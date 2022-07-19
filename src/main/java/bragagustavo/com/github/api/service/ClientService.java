@@ -18,13 +18,14 @@ public class ClientService {
     private ClientRepository clientRepository;
 
     @Transactional
-    public Client insertclient(Client client) {
+    public Client insertClient(Client client) {
         client.setId(null);
         return clientRepository.save(client);
     }
 
     public Client updateClient(Client client) {
         Client clientToUpdate = find(client.getId());
+        updateData(clientToUpdate, client);
         return clientRepository.save(clientToUpdate);
     }
 
@@ -45,7 +46,7 @@ public class ClientService {
     public Client fromDto(ClientDto clientDto) {
 
         return new Client(clientDto.getId(), clientDto.getName(), clientDto.getEmail(), clientDto.getPhone(),
-                null, null);
+                null);
     }
 
     public void deleteClient(Integer id) {
