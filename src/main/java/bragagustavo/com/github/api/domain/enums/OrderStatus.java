@@ -1,6 +1,6 @@
 package bragagustavo.com.github.api.domain.enums;
 
-public enum StatusPedido {
+public enum OrderStatus {
 
     ABERTO(0,"Aberto"),
     EM_ANDAMENTO(1,"Em andamento"),
@@ -10,7 +10,7 @@ public enum StatusPedido {
     private Integer cod;
     private String descricao;
 
-    StatusPedido(int cod, String descricao) {
+    OrderStatus(int cod, String descricao) {
         this.cod = cod;
         this.descricao = descricao;
     }
@@ -23,13 +23,13 @@ public enum StatusPedido {
         return descricao;
     }
 
-    public static StatusPedido toEnum(Integer cod){
+    public static OrderStatus toEnum(Integer cod){
 
         if(cod==null){
             return null;
         }
 
-        for (StatusPedido x : StatusPedido.values()){
+        for (OrderStatus x : OrderStatus.values()){
             if (cod.equals(x.getCod())){
                 return x;
             }
